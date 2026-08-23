@@ -42,7 +42,7 @@
       <a href="../activity.html">활동</a>
       <a href="../about.html">소개 · 가입</a>
     </nav>
-    
+    <button class="lock" id="lockbtn" type="button">회원</button>
   </div>
 </header>
 <main id="main">
@@ -59,7 +59,9 @@
   <div>
     <section class="summary" aria-label="핵심 요약"><p>이시우 님은 픽케팅 대표이며 불스CEO전문가모임의 마케팅/PR 분야 회원입니다.
     브랜드·디지털 퍼포먼스 마케팅 에이전시 서비스 주요 이력은 브랜드·디지털마케팅 종합 에이전시 / 퍼포먼스 마케팅입니다. 주요 키워드는 마케팅, 콘텐츠, 브랜딩, 디지털마케팅, 광고입니다.</p></section>
-    
+    <section class="block"><h2>이야기</h2>
+      <div class="note-box">분기 설문 답이 여기에 들어갑니다. 어떻게 지금 일을 하게 됐나 · 요즘 집중하는 것 · 불스에서 얻은 것</div>
+    </section>
     <section class="block"><h2>주요 이력</h2>
       <ul class="tl"><li><b>2025</b><span>브랜드·디지털마케팅 종합 에이전시 / 퍼포먼스 마케팅</span></li></ul>
     </section>
@@ -67,9 +69,15 @@
       <p class="big">브랜드·디지털 퍼포먼스 마케팅 에이전시 서비스</p>
       <p class="muted">이런 일이면 이시우 회원에게 물어보세요.</p>
     </section>
+    <section class="block"><h2>필요한 것</h2>
+      <div class="locked"><div class="veil"><b>MEMBERS ONLY</b> 눌러서 비밀번호 입력</div>
+        <div class="body"><p class="big" data-need="15">회원 확인 후 표시됩니다.</p>
+        <p class="muted">지금 찾고 있는 사람이나 기회입니다.</p></div></div>
+    </section>
     
-    
-    
+    <section class="block"><h2>함께한 회원</h2>
+      <p class="muted">아직 기록된 협업이 없습니다. 분기 설문의 「도움 준 일 / 받은 일」 답으로 쌓입니다.</p>
+    </section>
   </div>
   <aside aria-label="관련 정보">
     <section class="block"><h2>전문 키워드</h2>
@@ -78,7 +86,8 @@
       <a class="peer" href="%EC%9D%B4%EC%9A%B0%EB%9E%8C.html"><span class="pn">이우람</span><span class="pc">PR펌 바다와하늘처럼</span><span class="pk">마케팅 · 브랜딩</span></a><a class="peer" href="%EC%98%A4%EB%AA%85%EC%9A%B0.html"><span class="pn">오명우</span><span class="pc">오지다</span><span class="pk">콘텐츠</span></a><a class="peer" href="%EC%A0%95%EC%9D%B8%EC%95%A0.html"><span class="pn">정인애</span><span class="pc">lovo&amp;company</span><span class="pk">브랜딩</span></a><a class="peer" href="%EB%B0%95%EC%84%B8%EC%83%81.html"><span class="pn">박세상</span><span class="pc">한복남</span><span class="pk">콘텐츠</span></a><a class="peer" href="%EC%9C%A0%EC%A3%BC%ED%98%B8.html"><span class="pn">유주호</span><span class="pc">미몽컴퍼니</span><span class="pk">브랜딩</span></a>
       <p><a class="ilink" href="../help.html#map">연결 지도에서 보기</a></p></section>
     <section class="block"><h2>연락</h2>
-      <p>회원 연결은 사무국에서 안내합니다.</p><p><a class="ilink" href="mailto:media@likebaha.com?subject=%5B%EB%B6%88%EC%8A%A485%20%ED%9A%8C%EC%9B%90%20%EC%97%B0%EA%B2%B0%5D%20%EC%9D%B4%EC%8B%9C%EC%9A%B0%20%EB%8B%98%20%EB%AC%B8%EC%9D%98">사무국에 연결 문의</a></p></section>
+      <div class="locked"><div class="veil"><b>MEMBERS ONLY</b> 눌러서 비밀번호 입력</div>
+      <div class="body"><p>이메일과 SNS는 본인이 공개 범위를 정합니다.</p><p class="muted">데모에는 실제 연락처를 넣지 않았습니다.</p></div></div></section>
     <section class="block"><h2>사람 찾기</h2>
       <p><a class="ilink" href="../help.html#directory">공개 프로필 30명 보기</a></p></section>
   </aside>
@@ -104,8 +113,16 @@
     </nav>
   </div>
 </footer>
-
-<script src="../shared-public.js"></script>
+<div id="pw" role="dialog" aria-modal="true" aria-labelledby="pw-h">
+  <div class="box">
+    <h2 id="pw-h">회원 비밀번호</h2>
+    <p>연락처와 「필요한 것」, 서로 돕기 보드는 회원에게만 보입니다. 단톡방 공지의 비밀번호를 넣어 주세요.</p>
+    <input id="pw-in" type="password" autocomplete="off" placeholder="비밀번호" aria-label="회원 비밀번호">
+    <div class="err" id="pw-err" role="alert"></div>
+    <div class="row"><button class="no" id="pw-no" type="button">닫기</button><button class="ok" id="pw-ok" type="button">열기</button></div>
+  </div>
+</div>
+<script src="../shared.js"></script>
 
 </body>
 </html>

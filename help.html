@@ -42,7 +42,7 @@
       <a href="activity.html">활동</a>
       <a href="about.html">소개 · 가입</a>
     </nav>
-    
+    <button class="lock" id="lockbtn" type="button">회원</button>
   </div>
 </header>
 <main id="main">
@@ -409,11 +409,22 @@
     <p class="muted" id="noresult" hidden>해당하는 회원이 없습니다. 다른 검색어나 분야를 선택해 보세요.</p>
   </section>
 
-  <section class="askbox" aria-labelledby="connect-h">
-    <h2 id="connect-h">찾는 사람이 안 보이면</h2>
-    <p>사무국에 찾는 분야와 도움받고 싶은 내용을 알려 주세요. 적합한 회원에게 전달합니다.</p>
-    <p><a class="btn ghost" href="mailto:media@likebaha.com?subject=%5B%EB%B6%88%EC%8A%A485%20%ED%9A%8C%EC%9B%90%20%EC%97%B0%EA%B2%B0%20%EB%AC%B8%EC%9D%98%5D">사무국에 연결 문의</a></p>
+  <section aria-labelledby="need-h">
+    <h2 id="need-h" class="sub">회원들이 지금 찾고 있는 것</h2>
+    <div class="locked"><div class="veil"><b>MEMBERS ONLY</b> 눌러서 비밀번호 입력</div>
+      <div class="body" id="need"><p class="muted">회원 확인 후 30건이 표시됩니다.</p></div></div>
   </section>
+
+  <div class="locked"><div class="veil"><b>MEMBERS ONLY</b> 요청 올리기는 회원만</div><div class="body">
+    <div class="ask">
+      <h2>요청 올리기</h2>
+      <p class="muted">정식 버전에서는 노션 폼으로 연결됩니다. 올라온 요청은 목록 맨 위에 뜨고 사무국이 단톡방에 알립니다.</p>
+      <label for="rq-n">이름</label><input id="rq-n" placeholder="회원 이름">
+      <label for="rq-t">무엇이 필요한가요</label><textarea id="rq-t" rows="3" placeholder="예: 충청권 유통 채널을 아는 분을 찾습니다"></textarea>
+      <label for="rq-c">연락 방법</label><input id="rq-c" placeholder="단톡방 / 이메일 / 전화">
+      <p><span class="btn" style="opacity:.45;cursor:not-allowed">올리기 · 데모에서는 동작하지 않습니다</span></p>
+    </div>
+  </div></div>
 
   <section id="map" class="finder-chapter" aria-labelledby="map-h">
     <h2 id="map-h" class="sub">이어진 관계 살펴보기</h2>
@@ -463,8 +474,16 @@
     </nav>
   </div>
 </footer>
-
-<script src="shared-public.js"></script>
+<div id="pw" role="dialog" aria-modal="true" aria-labelledby="pw-h">
+  <div class="box">
+    <h2 id="pw-h">회원 비밀번호</h2>
+    <p>연락처와 「필요한 것」, 서로 돕기 보드는 회원에게만 보입니다. 단톡방 공지의 비밀번호를 넣어 주세요.</p>
+    <input id="pw-in" type="password" autocomplete="off" placeholder="비밀번호" aria-label="회원 비밀번호">
+    <div class="err" id="pw-err" role="alert"></div>
+    <div class="row"><button class="no" id="pw-no" type="button">닫기</button><button class="ok" id="pw-ok" type="button">열기</button></div>
+  </div>
+</div>
+<script src="shared.js"></script>
 <script src="engine/d3.v7.min.js"></script>
 <script src="help.js"></script>
 <script src="network.js"></script>

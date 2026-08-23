@@ -42,7 +42,7 @@
       <a href="activity.html">활동</a>
       <a href="about.html" class="on" aria-current="page">소개 · 가입</a>
     </nav>
-    
+    <button class="lock" id="lockbtn" type="button">회원</button>
   </div>
 </header>
 <main id="main">
@@ -77,12 +77,15 @@
     <li><b>03</b><span>운영진 안내</span></li>
     <li><b>04</b><span>가입 · 단톡방 초대</span></li>
   </ol>
-  <div class="join-contact">
-    <p class="lead">가입 대상과 활동 분야를 간단히 적어 사무국으로 보내 주세요.</p>
-    <p><a class="btn brass" href="mailto:media@likebaha.com?subject=%5B%EB%B6%88%EC%8A%A485%20%EA%B0%80%EC%9E%85%20%EB%AC%B8%EC%9D%98%5D&body=%EC%9D%B4%EB%A6%84%3A%0A%ED%9A%8C%EC%82%AC%20%2F%20%EC%86%8C%EC%86%8D%3A%0A%ED%99%9C%EB%8F%99%20%EB%B6%84%EC%95%BC%3A%0A%EC%97%B0%EB%9D%BD%EC%B2%98%3A%0A%EB%AC%B8%EC%9D%98%20%EB%82%B4%EC%9A%A9%3A%0A">이메일로 가입 문의</a></p>
-    <p class="muted">수신: 불스85 사무국 · 목적: 가입 문의 응대 · 보유 기간: 처리 완료 후 1년</p>
-    <p class="muted">메일 앱이 열리지 않으면 media@likebaha.com으로 직접 보내 주세요.</p>
-  </div>
+  <form onsubmit="event.preventDefault();alert('데모에서는 전송되지 않습니다.')">
+    <label for="f-n">이름 *</label><input id="f-n" required>
+    <label for="f-c">회사 / 소속</label><input id="f-c">
+    <label for="f-p">연락처</label><input id="f-p">
+    <label for="f-e">이메일 *</label><input id="f-e" type="email" required>
+    <label for="f-m">문의 내용 *</label><textarea id="f-m" rows="4" required></textarea>
+    <p class="muted">개인정보 수집 항목: 이름·이메일·연락처·회사명 / 목적: 가입 문의 응대 / 보유 기간: 처리 완료 후 1년</p>
+    <button class="btn brass" type="submit">문의 제출하기</button>
+  </form>
 </div></section>
 
 <section class="sec" aria-labelledby="faq-h"><div class="wrap">
@@ -114,8 +117,16 @@
     </nav>
   </div>
 </footer>
-
-<script src="shared-public.js"></script>
+<div id="pw" role="dialog" aria-modal="true" aria-labelledby="pw-h">
+  <div class="box">
+    <h2 id="pw-h">회원 비밀번호</h2>
+    <p>연락처와 「필요한 것」, 서로 돕기 보드는 회원에게만 보입니다. 단톡방 공지의 비밀번호를 넣어 주세요.</p>
+    <input id="pw-in" type="password" autocomplete="off" placeholder="비밀번호" aria-label="회원 비밀번호">
+    <div class="err" id="pw-err" role="alert"></div>
+    <div class="row"><button class="no" id="pw-no" type="button">닫기</button><button class="ok" id="pw-ok" type="button">열기</button></div>
+  </div>
+</div>
+<script src="shared.js"></script>
 
 </body>
 </html>

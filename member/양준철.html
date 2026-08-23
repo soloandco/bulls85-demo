@@ -42,7 +42,7 @@
       <a href="../activity.html">활동</a>
       <a href="../about.html">소개 · 가입</a>
     </nav>
-    
+    <button class="lock" id="lockbtn" type="button">회원</button>
   </div>
 </header>
 <main id="main">
@@ -59,7 +59,9 @@
   <div>
     <section class="summary" aria-label="핵심 요약"><p>양준철 님은 온오프믹스 대표이며 불스CEO전문가모임의 IT/플랫폼 분야 회원입니다.
     이벤트 플랫폼 140만 회원 네트워크 및 온오프라인 행사 인프라 주요 이력은 회원 140만명 · 업력 16년 / 레저사업 인수로 종합 이벤트 플랫폼 확장입니다. 주요 키워드는 이벤트, 플랫폼, IT, 온오프라인, 네트워킹입니다.</p></section>
-    
+    <section class="block"><h2>이야기</h2>
+      <div class="note-box">분기 설문 답이 여기에 들어갑니다. 어떻게 지금 일을 하게 됐나 · 요즘 집중하는 것 · 불스에서 얻은 것</div>
+    </section>
     <section class="block"><h2>주요 이력</h2>
       <ul class="tl"><li><b>2025</b><span>회원 140만명 · 업력 16년 / 레저사업 인수로 종합 이벤트 플랫폼 확장</span></li></ul>
     </section>
@@ -67,13 +69,19 @@
       <p class="big">이벤트 플랫폼 140만 회원 네트워크 및 온오프라인 행사 인프라</p>
       <p class="muted">이런 일이면 양준철 회원에게 물어보세요.</p>
     </section>
-    
+    <section class="block"><h2>필요한 것</h2>
+      <div class="locked"><div class="veil"><b>MEMBERS ONLY</b> 눌러서 비밀번호 입력</div>
+        <div class="body"><p class="big" data-need="23">회원 확인 후 표시됩니다.</p>
+        <p class="muted">지금 찾고 있는 사람이나 기회입니다.</p></div></div>
+    </section>
     <section class="block"><h2>언론 보도</h2><article class="news">
   <h3><a href="https://www.mt.co.kr/future/2026/08/11/2026081115251868445" target="_blank" rel="noopener">행사 참가 접수부터 결제까지 한번에… 온오프믹스, 새 기능 출시</a></h3>
   <p>이벤트 테크 기업 온오프믹스가 설문·접수 양식을 만드는 '온오프믹스 폼'을 정식 출시했다. 웹에서 바로 양식을 만들어 배포하고 행사 접수와 결제까지 한 흐름으로 처리한다.</p>
   <p class="meta"><b>양준철</b> · 온오프믹스 · 머니투데이 · <time datetime="2026-08-11">2026.08.11</time></p>
 </article></section>
-    
+    <section class="block"><h2>함께한 회원</h2>
+      <p class="muted">아직 기록된 협업이 없습니다. 분기 설문의 「도움 준 일 / 받은 일」 답으로 쌓입니다.</p>
+    </section>
   </div>
   <aside aria-label="관련 정보">
     <section class="block"><h2>전문 키워드</h2>
@@ -82,7 +90,8 @@
       <a class="peer" href="%EB%B0%95%EA%B2%BD%ED%98%B8.html"><span class="pn">박경호</span><span class="pc">모타운체인컴퍼니</span><span class="pk">플랫폼 · IT</span></a><a class="peer" href="%EC%96%91%EC%95%84%EC%A0%95.html"><span class="pn">양아정</span><span class="pc">이화여자대학교</span><span class="pk">플랫폼</span></a><a class="peer" href="%EC%96%91%ED%99%8D%EC%84%9D.html"><span class="pn">양홍석</span><span class="pc">질링스</span><span class="pk">IT</span></a><a class="peer" href="%EA%B9%80%ED%98%9C%EC%97%B0.html"><span class="pn">김혜연</span><span class="pc">엔씽</span><span class="pk">플랫폼</span></a><a class="peer" href="%EC%9D%B4%EC%A7%80%ED%9B%88.html"><span class="pn">이지훈</span><span class="pc">라이브브릿지</span><span class="pk">이벤트</span></a>
       <p><a class="ilink" href="../help.html#map">연결 지도에서 보기</a></p></section>
     <section class="block"><h2>연락</h2>
-      <p>회원 연결은 사무국에서 안내합니다.</p><p><a class="ilink" href="mailto:media@likebaha.com?subject=%5B%EB%B6%88%EC%8A%A485%20%ED%9A%8C%EC%9B%90%20%EC%97%B0%EA%B2%B0%5D%20%EC%96%91%EC%A4%80%EC%B2%A0%20%EB%8B%98%20%EB%AC%B8%EC%9D%98">사무국에 연결 문의</a></p></section>
+      <div class="locked"><div class="veil"><b>MEMBERS ONLY</b> 눌러서 비밀번호 입력</div>
+      <div class="body"><p>이메일과 SNS는 본인이 공개 범위를 정합니다.</p><p class="muted">데모에는 실제 연락처를 넣지 않았습니다.</p></div></div></section>
     <section class="block"><h2>사람 찾기</h2>
       <p><a class="ilink" href="../help.html#directory">공개 프로필 30명 보기</a></p></section>
   </aside>
@@ -108,8 +117,16 @@
     </nav>
   </div>
 </footer>
-
-<script src="../shared-public.js"></script>
+<div id="pw" role="dialog" aria-modal="true" aria-labelledby="pw-h">
+  <div class="box">
+    <h2 id="pw-h">회원 비밀번호</h2>
+    <p>연락처와 「필요한 것」, 서로 돕기 보드는 회원에게만 보입니다. 단톡방 공지의 비밀번호를 넣어 주세요.</p>
+    <input id="pw-in" type="password" autocomplete="off" placeholder="비밀번호" aria-label="회원 비밀번호">
+    <div class="err" id="pw-err" role="alert"></div>
+    <div class="row"><button class="no" id="pw-no" type="button">닫기</button><button class="ok" id="pw-ok" type="button">열기</button></div>
+  </div>
+</div>
+<script src="../shared.js"></script>
 
 </body>
 </html>
