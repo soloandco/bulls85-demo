@@ -12,7 +12,7 @@
       const s = q.value.trim().toLowerCase();
       let n = 0;
       rows.forEach((r) => {
-        const okCat = cat === 'all' || (cat === 'new' ? r.dataset.new === '1' : r.dataset.cat === cat);
+        const okCat = cat === 'all' || r.dataset.cat === cat;
         const okQ = !s || r.dataset.q.toLowerCase().includes(s);
         const show = okCat && okQ;
         r.hidden = !show;

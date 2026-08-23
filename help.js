@@ -16,8 +16,7 @@
       let n = 0;
       rows.forEach((r) => {
         const matchesSearch = !s || (r.dataset.q || r.textContent).toLowerCase().includes(s);
-        const matchesCategory = category === 'all' ||
-          (category === 'new' ? r.dataset.new === '1' : r.dataset.cat === category);
+        const matchesCategory = category === 'all' || r.dataset.cat === category;
         const visible = matchesSearch && matchesCategory;
         r.hidden = !visible;
         if (visible) n++;
