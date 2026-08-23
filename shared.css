@@ -163,7 +163,7 @@ h1{font-size:clamp(30px,4.4vw,46px);line-height:1.16;margin:0 0 4px}
 .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 0}
 
 /* 핵심 요약: 사람도 AI도 이 문단부터 읽는다 */
-.summary{border-left:3px solid var(--brass);padding:2px 0 2px 18px;margin:20px 0 26px;max-width:70ch}
+.summary{border-left:3px solid var(--brass);padding:2px 0 2px 18px;margin:20px 0 26px}
 .summary p{margin:0;font-size:17px;line-height:1.72;color:var(--ink)}
 .summary b{font-weight:700}
 
@@ -302,8 +302,18 @@ h1{font-size:clamp(30px,4.4vw,46px);line-height:1.16;margin:0 0 4px}
   font-weight:400;line-height:1}
 .steps span{display:block;margin-top:6px;font-size:14.5px}
 @media(max-width:760px){.steps{grid-template-columns:1fr 1fr}}
-form{max-width:560px}
-.faq{margin:0;max-width:76ch}
+/* 가입 문의 폼: 넓은 화면에서는 짧은 항목 4개를 두 칸으로 놓아 오른쪽이 비지 않게 한다 */
+form{display:grid;grid-template-columns:1fr;column-gap:28px}
+form > *{grid-column:1/-1}
+form button,form .btn{justify-self:start}
+@media(min-width:761px){
+  form{grid-template-columns:1fr 1fr}
+  form label[for="f-n"]{grid-area:1/1}  form input#f-n{grid-area:2/1}
+  form label[for="f-c"]{grid-area:1/2}  form input#f-c{grid-area:2/2}
+  form label[for="f-p"]{grid-area:3/1}  form input#f-p{grid-area:4/1}
+  form label[for="f-e"]{grid-area:3/2}  form input#f-e{grid-area:4/2}
+}
+.faq{margin:0}
 .faq dt{font-family:var(--serif);font-weight:700;font-size:17.5px;margin:22px 0 6px;
   padding-top:16px;border-top:1px solid var(--rule)}
 .faq dt:first-child{border-top:1px solid var(--rule-2)}

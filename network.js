@@ -85,12 +85,33 @@
     });
   }
 
+  // 그리기 라이브러리(d3)는 300KB 가까이 된다. 지도를 펼칠 때 처음 내려받는다.
+  let d3Loading = null;
+  function loadD3() {
+    if (window.d3) return Promise.resolve();
+    if (!d3Loading) d3Loading = new Promise((done, fail) => {
+      const tag = document.createElement('script');
+      tag.src = 'engine/d3.v7.min.js';
+      tag.onload = done;
+      tag.onerror = () => { d3Loading = null; fail(new Error('d3 로드 실패')); };
+      document.head.appendChild(tag);
+    });
+    return d3Loading;
+  }
+
+  function openMap() {
+    const box = document.getElementById('g');
+    // 휴대폰에서는 지도를 숨기므로 라이브러리도 받지 않는다
+    if (!box || box.clientWidth === 0) return;
+    loadD3().then(draw).catch(() => {});
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     const box = document.getElementById('mapbox');
     if (!box) return;
     // 주소에 #map 이 붙어 들어오면 펼친 채로 시작한다
     if (location.hash === '#map') box.open = true;
-    box.addEventListener('toggle', () => { if (box.open) draw(); });
-    if (box.open) draw();
+    box.addEventListener('toggle', () => { if (box.open) openMap(); });
+    if (box.open) openMap();
   });
 })();

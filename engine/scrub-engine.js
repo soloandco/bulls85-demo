@@ -195,10 +195,16 @@ function mountScrollWorld(container, config) {
     window.scrollTo({ top: seg.start + (seg.end - seg.start) * 0.5, behavior: reduce ? 'auto' : 'smooth' });
   }
 
+  // 첫 화면(글자·정지 이미지)이 다 그려질 때까지 영상 내려받기를 미룬다.
+  // 클립 하나가 2MB 가까이 되어 먼저 받으면 글꼴·스타일과 회선을 다툰다.
+  let firstPaintDone = document.readyState === 'complete';
+  if (!firstPaintDone) window.addEventListener('load', () => { firstPaintDone = true; read(); }, { once: true });
+
   function loadClip(s) {
     // Under prefers-reduced-motion we never load the clips at all — the stills stay up
     // and simply cross-dissolve as you scroll. No scrubbed video motion, no decode cost.
     if (reduce || s.loading || !s.clip) return;
+    if (!firstPaintDone) return;   // 첫 화면이 끝난 뒤부터 받는다
     s.loading = true;
     // Serve the lighter mobile encode on phones when one was provided.
     const url = (isMobile() && s.clipM) ? s.clipM : s.clip;
