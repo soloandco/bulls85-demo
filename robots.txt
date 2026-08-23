@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /data/needs.json
 
-Sitemap: https://soloandco.github.io/bulls85-demo/sitemap.xml
+Sitemap: https://bulls85.com/sitemap.xml

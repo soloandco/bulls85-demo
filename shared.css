@@ -427,6 +427,12 @@ html,body{overflow-x:clip}
 .people-finder #list .row .no{font-size:20px}
 .people-finder #list .row:hover{box-shadow:inset 3px 0 0 var(--brass)}
 .directory-results{margin-top:30px}
+.grp{margin:0 0 34px}
+.grp[hidden]{display:none}
+.grp-h{display:flex;align-items:baseline;gap:10px;font-family:var(--sans);font-size:15px;font-weight:700;
+  color:var(--ink);margin:0 0 4px;padding-bottom:8px;border-bottom:2px solid var(--brass)}
+.grp-n{font-family:var(--sans);font-size:13px;font-weight:400;color:var(--muted)}
+.grp .index{border-top:0}
 .askbox{border-top:1px solid var(--ink);padding-top:20px;margin:36px 0 0}
 .askbox h2{font-family:var(--serif);font-size:20px;margin:0 0 8px}
 .askbox p{margin:0 0 10px}

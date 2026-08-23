@@ -1,4 +1,4 @@
-/* 사람 찾기: 한 명부에서 이름·회사·고민 검색과 분야 필터를 함께 적용한다. */
+/* 사람 찾기: 분야별로 묶인 한 명부에서 이름·회사·고민 검색과 분야 필터를 함께 적용한다. */
 (function () {
   document.addEventListener('DOMContentLoaded', () => {
     const q = document.getElementById('q');
@@ -8,6 +8,7 @@
     if (!q) return;
 
     const rows = [...document.querySelectorAll('#list .row')];
+    const groups = [...document.querySelectorAll('#list .grp')];
     let category = 'all';
 
     function draw() {
@@ -20,6 +21,16 @@
         const visible = matchesSearch && matchesCategory;
         r.hidden = !visible;
         if (visible) n++;
+      });
+      groups.forEach((g) => {
+        const shown = [...g.querySelectorAll('.row')].filter((r) => !r.hidden);
+        g.hidden = shown.length === 0;
+        shown.forEach((r, i) => {
+          const no = r.querySelector('.no');
+          if (no) no.textContent = String(i + 1).padStart(2, '0');
+        });
+        const badge = g.querySelector('.grp-n');
+        if (badge) badge.textContent = `${shown.length}명`;
       });
       if (count) count.textContent = n ? `${n}명` : '';
       if (none) none.hidden = n > 0;
