@@ -25,8 +25,8 @@
   --btn-fill:var(--red);              /* 밝은 면 위 대표 버튼: 로고 빨강 */
   --btn-fill-hover:var(--red-2);
   --btn-ink:#F7F1E6;                  /* 그 위 글자: 크림 */
-  --btn-ondark-fill:#F2EFE6;          /* 짙은·적색 면 위 대표 버튼: 크림 */
-  --btn-ondark-fill-hover:#FFFFFF;
+  --btn-ondark-fill:#C8A05A;          /* 짙은·적색 면 위 대표 버튼: 로고 금색 */
+  --btn-ondark-fill-hover:#D4AF6A;
   --btn-ondark-ink:var(--red-2);      /* 그 위 글자: 짙은 빨강 */
   --serif:'Noto Serif KR',"Apple SD Gothic Neo",serif;
   --sans:'Noto Sans KR',"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
