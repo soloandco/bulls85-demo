@@ -21,6 +21,13 @@
   --brass-2:#7E6029;
   --brass-wash:#E9E0C9;
   --warn:#8C3F22;
+  /* 버튼 색 (버튼 컴포넌트의 색은 전부 여기서 온다) */
+  --btn-fill:var(--red);              /* 밝은 면 위 대표 버튼: 로고 빨강 */
+  --btn-fill-hover:var(--red-2);
+  --btn-ink:#F7F1E6;                  /* 그 위 글자: 크림 */
+  --btn-ondark-fill:#F2EFE6;          /* 짙은·적색 면 위 대표 버튼: 크림 */
+  --btn-ondark-fill-hover:#FFFFFF;
+  --btn-ondark-ink:var(--red-2);      /* 그 위 글자: 짙은 빨강 */
   --serif:'Noto Serif KR',"Apple SD Gothic Neo",serif;
   --sans:'Noto Sans KR',"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
   --label:'Bebas Neue','Noto Sans KR',sans-serif;
@@ -99,12 +106,15 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;letter-spacing:-.02em;text-wra
 
 /* ── 버튼 ───────────────────────────────────────────────── */
 .btn{display:inline-block;padding:11px 22px;font-weight:700;font-size:14.5px;
-  background:var(--red);color:#F2EFE6;border:1px solid var(--red);border-radius:0;cursor:pointer}
-.btn:hover{background:var(--red-2)}
+  background:var(--btn-fill);color:var(--btn-ink);border:1px solid var(--btn-fill);
+  border-radius:0;cursor:pointer;transition:background .18s,color .18s,border-color .18s}
+.btn:hover{background:var(--btn-fill-hover);border-color:var(--btn-fill-hover)}
+/* 밝은 면 위 보조 버튼 (테두리만) */
 .btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
 .btn.ghost:hover{background:var(--ink);color:var(--paper)}
-.btn.brass{background:var(--brass);border-color:var(--brass);color:var(--red-2)}
-.btn.brass:hover{background:var(--brass-2);border-color:var(--brass-2);color:#F2EFE6}
+/* 짙은·적색 면 위 대표 버튼 (크림 바탕 + 빨강 글자) */
+.btn.on-red{background:var(--btn-ondark-fill);border-color:var(--btn-ondark-fill);color:var(--btn-ondark-ink)}
+.btn.on-red:hover{background:var(--btn-ondark-fill-hover);border-color:var(--btn-ondark-fill-hover);color:var(--btn-ondark-ink)}
 
 /* ── 입력 ───────────────────────────────────────────────── */
 .search,input,textarea,select{font-family:var(--sans);font-size:15px;color:var(--ink);
@@ -336,7 +346,7 @@ footer a:hover{color:#F2EFE6}
   line-height:1.18 !important;white-space:pre !important}
 .sw-copy__title,.sw-copy__body,.sw-copy__eyebrow{word-break:keep-all;overflow-wrap:break-word}
 .sw-copy__eyebrow{font-family:var(--label) !important;font-size:1rem !important;letter-spacing:.18em !important}
-.sw-btn--primary,.sw-topcta{background:var(--brass) !important;color:var(--red-2) !important;border-radius:0 !important}
+.sw-btn--primary,.sw-topcta{background:var(--btn-ondark-fill) !important;color:var(--btn-ondark-ink) !important;border-radius:0 !important}
 .sw-btn--ghost{border-color:rgba(242,239,230,.5) !important;color:#F2EFE6 !important;border-radius:0 !important}
 .demo-band{background:var(--brass-wash);color:var(--brass-2);font-size:12.5px;text-align:center;
   padding:9px 14px;margin:0;letter-spacing:-.01em}
