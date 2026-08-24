@@ -145,6 +145,17 @@ input:focus,textarea:focus,select:focus,.search:focus{outline:0;border-bottom-co
 .locked.open>.veil{display:none}
 .locked:not(.open)>.body{visibility:hidden}
 
+/* 회원들이 지금 찾고 있는 것 — 한 사람이 한 행. 찾는 것을 위에, 누구인지를 아래에 */
+#need{display:block;margin-top:4px}
+.hrow{display:block;padding:15px 8px 15px 14px;border-bottom:1px solid var(--rule);
+  transition:background .12s,box-shadow .12s}
+.hrow:first-child{border-top:1px solid var(--rule-2)}
+.hrow:hover{background:var(--surface);box-shadow:inset 3px 0 0 var(--brass)}
+.hrow .ht{display:block;font-size:15.5px;line-height:1.5;color:var(--ink)}
+.hrow .hwho{display:block;margin-top:5px;font-size:13px;color:var(--muted)}
+.hrow .hn{font-family:var(--serif);font-weight:700;color:var(--ink-2);margin-right:8px}
+.hrow .hc{color:var(--muted)}
+
 /* ── 비밀번호 창 ────────────────────────────────────────── */
 #pw{position:fixed;inset:0;z-index:100;background:rgba(18,40,34,.86);display:none;
   align-items:center;justify-content:center;padding:20px}

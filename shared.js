@@ -47,9 +47,9 @@
       spots.forEach((el) => { el.textContent = needs[el.dataset.need] || '아직 적지 않았습니다.'; });
       if (board) {
         const d = await (await fetch(up + 'data/members.json')).json();
-        board.innerHTML = d.members.map((m) => `<a class="hrow" href="member/${encodeURIComponent(m.name)}.html" data-q="${m.name} ${m.company} ${needs[m.id] || ''}">
-          <span class="hn">${m.name}<span class="hc">${m.company}</span></span>
-          <span class="ht">${needs[m.id] || ''}</span></a>`).join('');
+        board.innerHTML = d.members.map((m) => `<a class="hrow" href="member/${encodeURIComponent(m.name)}.html" data-q="${m.name} ${m.company} ${m.category} ${needs[m.id] || ''}">
+          <span class="ht">${needs[m.id] || '아직 적지 않았습니다.'}</span>
+          <span class="hwho"><b class="hn">${m.name}</b><span class="hc">${m.company} · ${m.category}</span></span></a>`).join('');
       }
       needsLoaded = true;
     } catch (e) {
