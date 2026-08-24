@@ -2,7 +2,7 @@
    불스85 데모 · 공통 스타일
 
    방향: 홈 영상의 세계를 페이지로 가져온다.
-   어두운 녹색과 놋쇠빛, 촛불 조명, 종이와 원단의 질감.
+   로고의 짙은 적색과 놋쇠빛, 촛불 조명, 종이와 원단의 질감.
    카드·둥근 모서리·그림자 대신 얇은 괘선과 활자로 구성한다.
    회원 목록은 카드 격자가 아니라 「명부(index)」다.
    ───────────────────────────────────────────────────────────── */
@@ -15,8 +15,8 @@
   --muted:#59665F;
   --rule:#CFC7B5;         /* 괘선 */
   --rule-2:#B9AF98;
-  --green:#1E3932;
-  --green-2:#122822;
+  --red:#A01C24;          /* 로고 적색. 짙은 배경(헤더·푸터·히어로·버튼) */
+  --red-2:#82121A;        /* 한 단계 짙은 적색 */
   --brass:#A8823C;        /* 놋쇠. 강조는 여기 하나만 */
   --brass-2:#7E6029;
   --brass-wash:#E9E0C9;
@@ -38,7 +38,7 @@ img{max-width:100%}
 @media(max-width:640px){.wrap{padding:0 20px}}
 
 /* ── 상단 ───────────────────────────────────────────────── */
-.top{position:sticky;top:0;z-index:70;background:var(--green-2);color:#F2EFE6;
+.top{position:sticky;top:0;z-index:70;background:var(--red-2);color:#F2EFE6;
   border-bottom:1px solid rgba(168,130,60,.35)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;gap:14px}
 .top .brand{font-family:var(--label);font-size:23px;letter-spacing:.1em;color:#F2EFE6;white-space:nowrap}
@@ -99,11 +99,11 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;letter-spacing:-.02em;text-wra
 
 /* ── 버튼 ───────────────────────────────────────────────── */
 .btn{display:inline-block;padding:11px 22px;font-weight:700;font-size:14.5px;
-  background:var(--green);color:#F2EFE6;border:1px solid var(--green);border-radius:0;cursor:pointer}
-.btn:hover{background:var(--green-2)}
+  background:var(--red);color:#F2EFE6;border:1px solid var(--red);border-radius:0;cursor:pointer}
+.btn:hover{background:var(--red-2)}
 .btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
 .btn.ghost:hover{background:var(--ink);color:var(--paper)}
-.btn.brass{background:var(--brass);border-color:var(--brass);color:var(--green-2)}
+.btn.brass{background:var(--brass);border-color:var(--brass);color:var(--red-2)}
 .btn.brass:hover{background:var(--brass-2);border-color:var(--brass-2);color:#F2EFE6}
 
 /* ── 입력 ───────────────────────────────────────────────── */
@@ -145,11 +145,11 @@ input:focus,textarea:focus,select:focus,.search:focus{outline:0;border-bottom-co
 #pw .err{color:var(--warn);font-size:13px;min-height:20px;margin:6px 0 10px}
 #pw .row{display:flex;gap:10px;justify-content:flex-end;padding:0;border:0;background:none}
 #pw button{padding:10px 18px;border:1px solid var(--ink);font-weight:700;cursor:pointer;font-size:14px;border-radius:0}
-#pw .ok{background:var(--green);border-color:var(--green);color:#F2EFE6}
+#pw .ok{background:var(--red);border-color:var(--red);color:#F2EFE6}
 #pw .no{background:transparent;color:var(--ink)}
 
 /* ── 푸터 ───────────────────────────────────────────────── */
-footer{background:var(--green-2);color:rgba(242,239,230,.78);padding:44px 0;font-size:13px;margin-top:72px;
+footer{background:var(--red-2);color:rgba(242,239,230,.78);padding:44px 0;font-size:13px;margin-top:72px;
   border-top:3px solid var(--brass)}
 footer b{color:#F2EFE6;font-family:var(--label);font-size:17px;letter-spacing:.08em;font-weight:400}
 footer .fwrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
@@ -182,7 +182,7 @@ h1{font-size:clamp(30px,4.4vw,46px);line-height:1.16;margin:0 0 4px}
 
 /* 홈 도입부 */
 .intro{padding-top:56px}
-.join{background:var(--green-2);color:#F2EFE6;border-top:3px solid var(--brass);text-align:center;margin-top:64px}
+.join{background:var(--red-2);color:#F2EFE6;border-top:3px solid var(--brass);text-align:center;margin-top:64px}
 .join h2{color:#F2EFE6;margin:8px 0 14px}
 .join p{color:rgba(242,239,230,.72);margin:0 auto 26px}
 .join .eyebrow{color:#C8A05A}
@@ -197,7 +197,7 @@ h1{font-size:clamp(30px,4.4vw,46px);line-height:1.16;margin:0 0 4px}
 
 /* 이번 달의 이야기 */
 .story{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center}
-.story .ph{aspect-ratio:4/5;background:var(--green-2);display:flex;align-items:center;justify-content:center;
+.story .ph{aspect-ratio:4/5;background:var(--red-2);display:flex;align-items:center;justify-content:center;
   color:rgba(242,239,230,.5);font-size:13px;border-top:3px solid var(--brass)}
 .story .story-mark{flex-direction:column;gap:4px;color:#F2EFE6}
 .story .story-mark b{font-family:var(--label);font-size:clamp(42px,7vw,78px);font-weight:400;letter-spacing:.08em}
@@ -246,7 +246,7 @@ h1{font-size:clamp(30px,4.4vw,46px);line-height:1.16;margin:0 0 4px}
 .tools{margin-bottom:6px}
 
 /* 회원 개인 페이지 */
-.phero{background:var(--green-2);color:#F2EFE6;padding:52px 0 42px;border-bottom:3px solid var(--brass)}
+.phero{background:var(--red-2);color:#F2EFE6;padding:52px 0 42px;border-bottom:3px solid var(--brass)}
 .phero .cat{font-size:13px;letter-spacing:.08em;color:#C8A05A;margin:0 0 8px;font-weight:700}
 .phero h1{color:#F2EFE6;margin:0 0 6px}
 .phero .co{color:rgba(242,239,230,.66);font-size:15.5px;margin:0}
@@ -269,7 +269,7 @@ h1{font-size:clamp(30px,4.4vw,46px);line-height:1.16;margin:0 0 4px}
 /* 서로 돕기 보드 */
 .board{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:24px}
 .col > h2{font-family:var(--label);font-size:17px;letter-spacing:.16em;font-weight:400;margin:0 0 4px}
-.col > h2.give{color:var(--green)}
+.col > h2.give{color:var(--red)}
 .col > h2.need{color:var(--brass-2)}
 .col > .sub{font-family:var(--sans);font-size:13px;color:var(--muted);margin:0 0 10px;
   border:0;padding:0;letter-spacing:0;font-weight:400}
@@ -279,7 +279,7 @@ h1{font-size:clamp(30px,4.4vw,46px);line-height:1.16;margin:0 0 4px}
 @media(max-width:820px){.board{grid-template-columns:1fr;gap:28px}}
 
 /* 관계 지도 */
-#g{background:var(--green-2);border-top:3px solid var(--brass);height:min(70vh,620px);position:relative;overflow:hidden;margin-top:14px}
+#g{background:var(--red-2);border-top:3px solid var(--brass);height:min(70vh,620px);position:relative;overflow:hidden;margin-top:14px}
 #g svg{width:100%;height:100%;display:block}
 .node circle{cursor:pointer}
 .node text{font-size:11px;fill:rgba(242,239,230,.92);pointer-events:none;text-anchor:middle;font-family:var(--sans)}
@@ -328,7 +328,7 @@ footer nav{display:block;font-size:12.5px;line-height:2}
 footer a:hover{color:#F2EFE6}
 
 /* 스크롤 영상 위 자막 */
-:root{--sw-bg:#0F1C18;--sw-ink:#F2EFE6;--sw-ink-soft:rgba(242,239,230,.7);--sw-accent:#C8A05A;
+:root{--sw-bg:#4B0C11;--sw-ink:#F2EFE6;--sw-ink-soft:rgba(242,239,230,.7);--sw-accent:#C8A05A;
   --sw-font-display:'Noto Serif KR',serif;--sw-font-body:'Noto Sans KR',sans-serif}
 #world{background:var(--sw-bg)}
 .sw-topbar,.sw-particles{display:none !important}
@@ -336,7 +336,7 @@ footer a:hover{color:#F2EFE6}
   line-height:1.18 !important;white-space:pre !important}
 .sw-copy__title,.sw-copy__body,.sw-copy__eyebrow{word-break:keep-all;overflow-wrap:break-word}
 .sw-copy__eyebrow{font-family:var(--label) !important;font-size:1rem !important;letter-spacing:.18em !important}
-.sw-btn--primary,.sw-topcta{background:var(--brass) !important;color:var(--green-2) !important;border-radius:0 !important}
+.sw-btn--primary,.sw-topcta{background:var(--brass) !important;color:var(--red-2) !important;border-radius:0 !important}
 .sw-btn--ghost{border-color:rgba(242,239,230,.5) !important;color:#F2EFE6 !important;border-radius:0 !important}
 .demo-band{background:var(--brass-wash);color:var(--brass-2);font-size:12.5px;text-align:center;
   padding:9px 14px;margin:0;letter-spacing:-.01em}
@@ -344,8 +344,8 @@ footer a:hover{color:#F2EFE6}
 /* 영상 구간을 지나면 아래 내용이 영상 자막 위로 올라와야 한다.
    엔진의 자막층이 z-index 20~40 의 fixed 라서 그보다 높게 쌓는다. */
 main > .sec, main > .phero{position:relative;z-index:45;background:var(--paper)}
-main > .join{background:var(--green-2)}
-main > .phero{background:var(--green-2)}
+main > .join{background:var(--red-2)}
+main > .phero{background:var(--red-2)}
 footer,.demo-band{position:relative;z-index:70}
 .top{position:sticky;top:0;z-index:80}
 
@@ -358,10 +358,10 @@ main:has(> .join:last-child) + footer{margin-top:0}
 /* 맨 위로 */
 #totop{position:fixed;right:22px;bottom:22px;z-index:90;width:46px;height:46px;
   display:flex;align-items:center;justify-content:center;
-  background:var(--green-2);color:#C8A05A;border:1px solid rgba(200,160,90,.5);
+  background:var(--red-2);color:#C8A05A;border:1px solid rgba(200,160,90,.5);
   font-size:19px;line-height:1;cursor:pointer;opacity:0;visibility:hidden;transition:opacity .2s}
 #totop.on{opacity:1;visibility:visible}
-#totop:hover{background:var(--brass);color:var(--green-2);border-color:var(--brass)}
+#totop:hover{background:var(--brass);color:var(--red-2);border-color:var(--brass)}
 @media(max-width:640px){#totop{right:14px;bottom:14px;width:42px;height:42px}}
 /* 영상 엔진이 html·body 에 건 overflow-x:hidden 이 상단 메뉴의 sticky 를 무력화한다.
    clip 은 스크롤 컨테이너를 만들지 않아 sticky 가 살아 있다. */
