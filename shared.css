@@ -358,7 +358,9 @@ footer a:hover{color:#F2EFE6}
 .sw-copy__title,.sw-copy__body,.sw-copy__eyebrow{word-break:keep-all;overflow-wrap:break-word}
 .sw-copy__eyebrow{font-family:var(--label) !important;font-size:1rem !important;letter-spacing:.18em !important}
 .sw-btn--primary,.sw-topcta{background:var(--btn-ondark-fill) !important;color:var(--btn-ondark-ink) !important;border-radius:0 !important}
-.sw-btn--ghost{border-color:rgba(242,239,230,.5) !important;color:#F2EFE6 !important;border-radius:0 !important}
+.sw-btn--ghost{border-color:rgba(242,239,230,.85) !important;color:#F2EFE6 !important;border-radius:0 !important;
+  background:rgba(30,6,9,.62) !important;backdrop-filter:blur(3px);text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.sw-btn--ghost:hover{background:rgba(30,6,9,.8) !important;border-color:#F2EFE6 !important}
 .demo-band{background:var(--brass-wash);color:var(--brass-2);font-size:12.5px;text-align:center;
   padding:9px 14px;margin:0;letter-spacing:-.01em}
 
